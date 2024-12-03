@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { getAllSpells } from "./api";
 import Spell from "./spell";
