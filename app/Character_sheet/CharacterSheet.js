@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AbilityScores from './AbilityScores';
 import Proficiencies from './proficiencies';
+import Equipment from './Equipment';
 
 
 console.log('AbilityScores:', AbilityScores);
@@ -8,6 +9,8 @@ console.log('Proficiencies:', Proficiencies);
 
 const CharacterSheet = () => {
   const [level, setLevel] = useState(1);
+
+  const calculateProficiencyBonus = (level) => Math.ceil(level / 4) + 1;
 
   return (
     <div className=''>
@@ -22,8 +25,12 @@ const CharacterSheet = () => {
           max="20"
         />
       </label>
+      <p>Proficiency Bonus: {calculateProficiencyBonus(level)}</p>
+ 
       <AbilityScores />
-      <Proficiencies level={level}/>
+      <Equipment/>
+      
+      
     </div>
   );
 };

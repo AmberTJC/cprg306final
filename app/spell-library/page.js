@@ -17,14 +17,52 @@ export default function App() {
     });
   }, []);
 
+
+  const [searchLevel, setSearchLevel] = useState('');
+
+  
+  const filteredSpells = spells.filter((spell) =>
+    searchLevel === '' ? true : spell.level === parseInt(searchLevel)
+  );
+
+
   return (
-    <div className="font-serif text-center 'flex columns-4 flex-wrap justify-center gap-4">
-      {spells.length === 0 && <span className="loading">Loading...</span>}
+
+    <div>
+
+<div >
+      <h1 className="text-3xl">Spell List</h1>
+      <label>
+  Search by Level:
+  <select className="text-black" value={searchLevel} onChange={(e) => setSearchLevel(e.target.value)}>
+    <option value="">All Levels</option>
+    <option value="1">Level 1</option>
+    <option value="2">Level 2</option>
+    <option value="3">Level 3</option>
+    <option value="4">Level 4</option>
+    <option value="5">Level 5</option>
+    <option value="6">Level 6</option>
+    <option value="7">Level 7</option>
+    <option value="8">Level 8</option>
+    <option value="9">Level 9</option>
+  </select>
+</label>
       <ul>
-        {spells.map((spell) => (
-          <Spell key={spell.index} spell={spell}/>
-        ))}
+        {filteredSpells.length > 0 ? (
+          filteredSpells.map((spell, index) => (
+            <li key={index}>
+              
+              <Spell key={spell.index} spell={spell}/>
+            </li>
+          ))
+        ) : (
+          <li>No spells found for level {searchLevel}</li>
+        )}
       </ul>
+    </div>
+
+
+   
     </div>
   );
 }

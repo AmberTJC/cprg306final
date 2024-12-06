@@ -7,6 +7,7 @@ const CharacterInfo = () => {
     class: '',
     alignment: '',
     background: '',
+    ac: '',
   });
 
   const handleInputChange = (field, value) => {
@@ -93,7 +94,21 @@ const CharacterInfo = () => {
             placeholder="Enter your character's background"
           />
         </label>
+
       </div>
+
+      <label className='text-xl'>
+          AC:
+          <input
+            type="text"
+            value={characterInfo.ac}
+            onChange={(e) => handleInputChange('ac', e.target.value)}
+            className='w-10'
+          />
+        </label>
+
+
+
     </div>
   );
 };
