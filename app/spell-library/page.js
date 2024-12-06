@@ -18,11 +18,11 @@ export default function App() {
   }, []);
 
   return (
-    <div className="font-serif text-center">
+    <div className="font-serif text-center 'flex columns-4 flex-wrap justify-center gap-4">
       {spells.length === 0 && <span className="loading">Loading...</span>}
-      <ul className="spell-list">
+      <ul>
         {spells.map((spell) => (
-          <Spell key={spell.index} spell={spell} />
+          <Spell key={spell.index} spell={spell}/>
         ))}
       </ul>
     </div>

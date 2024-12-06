@@ -10,8 +10,8 @@ const CharacterSheet = () => {
   const [level, setLevel] = useState(1);
 
   return (
-    <div>
-      <h1>Character Sheet</h1>
+    <div className=''>
+      
       <label>
         Character Level:
         <input

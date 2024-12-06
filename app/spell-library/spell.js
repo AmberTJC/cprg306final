@@ -1,6 +1,7 @@
 export default function Spell({ spell }) {
     return (
-      <li className="max-w-260  p-4">
+      <div >
+      <li>
         <hgroup>
           <h4>{spell.name}</h4>
           <small>
@@ -9,7 +10,7 @@ export default function Spell({ spell }) {
             {spell.level === 0 && " cantrip"}
           </small>
         </hgroup>
-        <div className="grid grid-cols-1 text-center ">
+        <div>
           <p>
             <strong>Casting Time</strong>
             {spell.casting_time}
@@ -28,5 +29,6 @@ export default function Spell({ spell }) {
           </p>
         </div>
       </li>
+      </div>
     );
   }

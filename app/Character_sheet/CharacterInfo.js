@@ -15,9 +15,9 @@ const CharacterInfo = () => {
 
   return (
     <div>
-      <h2>Character Information</h2>
+      <h2 className='text-2xl underline'>Character Information</h2>
       <div>
-        <label>
+        <label className='text-xl'>
           Name:
           <input
             type="text"
@@ -86,7 +86,7 @@ const CharacterInfo = () => {
       <div>
         <label>
           Background:
-          <input
+          <input className='size-fit'
             type="text"
             value={characterInfo.background}
             onChange={(e) => handleInputChange('background', e.target.value)}

@@ -18,12 +18,12 @@ const AbilityScores = () => {
 
   return (
     <div>
-      <h2>Ability Scores</h2>
+      <h2 className = 'text-xl'>Ability Scores</h2>
       {Object.keys(scores).map((ability) => (
-        <div key={ability}>
-          <label>
+        <div key={ability} className=''>
+          <label className=''>
             {ability.charAt(0).toUpperCase() + ability.slice(1)}:
-            <input
+            <input className='w-10'
               type="number"
               value={scores[ability]}
               onChange={(e) => handleScoreChange(ability, e.target.value)}
